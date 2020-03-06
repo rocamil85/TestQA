@@ -1,0 +1,86 @@
+﻿ //------------------------------------------------------------------------------------------------------------------------------------------------------------
+    function Sumar(a, b) {
+        return a + b;
+    }
+
+    function Producto(a, b) {
+        var c = 20;
+        return a * b * c;
+    }
+
+    //Versión estática    
+    console.log(Sumar(2,3),Producto(2,3));
+
+    //Versión dinámica
+    var num1 = parseInt(prompt("Inserte el primer numero", 0));
+    while (isNaN(num1) || num1 < 0) {
+        num1 = parseInt(prompt("Inserte el primer numero", 0));
+    }
+
+    var num2 = parseInt(prompt("Inserte el segundo numero", 0));
+    while (isNaN(num2) || num2 < 0) {
+        num2 = parseInt(prompt("Inserte el segundo numero", 0));
+    }
+    
+    console.log("La suma de num1 y num2 es: " + Sumar(num1, num2), "El resultado de la Función Producto es: " + Producto(num1, num2));
+
+
+
+    var Persona = {
+        nombre: 'Juan',
+        apellido: 'Perez',
+        telefono: 900199703,
+        email: 'juan.perez@gmail.com'
+    };
+
+    function ObtienePropiedades() {
+        var texto = "El nombre de esta persona es: " + Persona.nombre + " " + Persona.apellido + "\n" + "su teléfono es: " + Persona.telefono + " y su email: " + Persona.email;
+        return texto;
+    };
+
+    console.log(ObtienePropiedades());
+
+	
+	
+
+    //Trabajo con arreglo descomentar para probar
+
+    /* var numberArray = new Array(6);
+    for (let i = 0; i < 6; i++) {
+        numberArray[i] = parseInt(prompt("Entre un numero"));
+    }
+    console.log(numberArray);
+
+    var valor_busqueda = parseInt(prompt("Entre un numero a buscar en el arreglo"))
+    var respuesta = numberArray.findIndex(function (params) {
+        return params == valor_busqueda;
+    })
+
+    document.write("<h2>Estos son los numeros introducidos inicialmente</h2>");
+    numberArray.forEach(item => {
+        document.write(item + "<br/>");
+    });
+
+    document.write("<h2>Estos son los numeros ordenados</h2>");
+    numberArray.sort().forEach(item => {
+        document.write(item + "<br/>");
+    });
+
+    document.write("<h2>Estos son los numeros en reversa</h2>");
+    numberArray.reverse().forEach(item => {
+        document.write(item + "<br/>");
+    });
+
+    document.write("<h2>El arreglo tiene: " + numberArray.length + " elementos</h2>");
+
+    if (respuesta == -1) {
+        document.write("<h2>El numero seleccionado no se encuentra en este arreglo</h2>");
+    }
+    else {
+        document.write("<h2>El numero seleccionado se encuentra en este arreglo con indice: " + respuesta + "</h2>");
+    }*/
+    
+
+
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------

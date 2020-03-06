@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "3c723c23-0b92-4051-96f3-60ed46160336",
+		"name": "collectionCastro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ronaldo_castro_Ejercicio_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "84fad1e8-f2f5-419c-b6d9-3f4c2e739a51",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"OK\", function () { ",
+							"     pm.response.to.be.ok; ",
+							"});",
+							"",
+							"pm.test(\"Body\", function () { ",
+							"    pm.response.to.be.withBody; ",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"es JSON\", function () {",
+							"    var jsonData = pm.response.json();",
+							"});",
+							"",
+							"pm.test(\"JSON válido\", function () { ",
+							"     pm.response.to.be.json; ",
+							"});",
+							"",
+							"",
+							"pm.test(\"Rut is number\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].RUT).to.eql(number);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://5e0b6a8d-0234-4d93-937b-09a1b7d28947.mock.pstmn.io/castro",
+					"protocol": "https",
+					"host": [
+						"5e0b6a8d-0234-4d93-937b-09a1b7d28947",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"castro"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/castro",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"castro"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\nDato_cliente: {\n\tNombre: string,\n\tApellido: string,\n\tDireccion: string,\n\tEmail: string,\n\tTelefono: number,\n\tRUT: number\n},\nDato_perfil: {\n\tCuenta_ppal: number,\n\tTipo_cliente: string,\n\tTarjeta_debito: number\n},\nDato_Sucursal: {\n\tSucursal_nro: number,\n\tEjecutivo: string,\n\tTelefono_ejec: number,\n\tDireccion_suc: string\n},\nDato_productos: {\n\tTiene_prod: boolean,\n\tTipo_producto: [\n\t\tConsumo,\n\t\tHipotecario,\n\t\tLinea_emergencia,\n\t\tLinea_sobregiro,\n\t\t],\n\tPuntos: number,\n\tTarjeta_credito: number\n},\nDatos_seguros: {\n\tTiene_prod: boolean,\n\tSOAP: string,\n\tSeguro_vehiculo: string,\n\tSeguro_fraude: string,\n\tSeguro_hogar: string,\n\tSeguro_vida: string\n}\nDatos_fondos: {\n\tFondo_mutual: string,\n\tAhorro_previsional: number,\n\tctaRentaDiaria: string\n}\nDatos_penalizaciones: {\n\tInteresesMora_Sobregiro: number,\n\tInteresMora_TarjetaCredito: number,\n\tInteresMora_Consumo: number,\n\tInteresMora_Hipotecario: number\n}\n}\n"
+				}
+			]
+		},
+		{
+			"name": "ronaldo_castro_Ejercicio_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f620e09-4cdc-4418-969e-00e8291d025e",
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON valid\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"America\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check name first object\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"United States Minor Outlying Islands\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restcountries.eu/rest/v2/name/united",
+					"protocol": "https",
+					"host": [
+						"restcountries",
+						"eu"
+					],
+					"path": [
+						"rest",
+						"v2",
+						"name",
+						"united"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
